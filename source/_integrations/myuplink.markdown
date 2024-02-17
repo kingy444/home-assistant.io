@@ -3,12 +3,17 @@ title: myUplink
 description: Instructions on how to set up the myUplink integration within Home Assistant.
 ha_category:
   - Sensor
+  - Update
 ha_iot_class: Cloud Polling
 ha_release: '2024.2'
 ha_domain: myuplink
 ha_codeowners:
   - '@pajzo'
 ha_config_flow: true
+ha_platforms:
+  - diagnostics
+  - sensor
+  - update
 ha_integration_type: integration
 ---
 
@@ -25,7 +30,6 @@ Depending on the type of devices in your system, one or more sensor entities to 
 - **OAuth Flow**: Authorization Code Grant Flow
 - **Redirect URI**: `https://my.home-assistant.io/redirect/oauth`
 
-
 {% details "I have manually disabled My Home Assistant" %}
 
 If you don't have [My Home Assistant](/integrations/my) on your installation,
@@ -35,7 +39,7 @@ instead.
 The `<HOME_ASSISTANT_URL>` must be the same as used during the configuration/
 authentication process.
 
-Internal examples: `http://192.168.0.2:8123/auth/external/callback`, `http://homeassistant.local:8123/auth/external/callback`." 
+Internal examples: `http://192.168.0.2:8123/auth/external/callback`, `http://homeassistant.local:8123/auth/external/callback`."
 
 {% enddetails %}
 
